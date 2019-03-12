@@ -1,0 +1,27 @@
+{
+  "name": "match-c",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "prepublishOnly": "npm test",
+    "build": "tsc",
+    "test": "tsc && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drew-y/match-c.git"
+  },
+  "keywords": [],
+  "author": "Drew Youngwerth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drew-y/match-c/issues"
+  },
+  "homepage": "https://github.com/drew-y/match-c#readme",
+  "devDependencies": {
+    "@types/node": "^11.11.2",
+    "typescript": "^3.3.3333"
+  }
+}
