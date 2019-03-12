@@ -7,7 +7,7 @@
   "scripts": {
     "prepublishOnly": "npm test",
     "build": "tsc",
-    "test": "tsc && node dist/index.js"
+    "test": "tsc && node dist/test.js"
   },
   "repository": {
     "type": "git",
