@@ -12,11 +12,8 @@ class Match<T, U> {
     ) { }
 
     c(comparison: T, result: U) {
-        if (this.matched) return this;
-        if (comparison === this.val) {
-            return new Match(true, this.val, result);
-        }
-        return this;
+        if (this.matched || comparison !== this.val) return this;
+        return new Match(true, this.val, result);
     }
 }
 
