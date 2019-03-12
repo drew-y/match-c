@@ -4,19 +4,22 @@ export interface MatchCase<T, U> {
     result: U;
 }
 
-export const match = <T, U>(val: T, defaultVal: U) => {
-    class Match {
-        constructor(private matched: boolean, public result: U) {}
+class Match<T, U> {
+    constructor(
+        private matched: boolean,
+        private val: T,
+        public result: U
+    ) { }
 
-        c(comparison: T, result: U) {
-            if (this.matched) return this;
-            if (comparison === val) {
-                return new Match(true, result);
-            }
-            return this;
+    c(comparison: T, result: U) {
+        if (this.matched) return this;
+        if (comparison === this.val) {
+            return new Match(true, this.val, result);
         }
+        return this;
     }
-
-    return new Match(false, defaultVal);
 }
+
+export const match = <T, U>(val: T, defaultVal: U) =>
+    new Match(false, val, defaultVal);
 
